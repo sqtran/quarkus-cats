@@ -2,18 +2,20 @@ package com.steve.service;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 
 public class CatFactTest {
 
-    @Test
-    void sillyGetterSetterTest() {
+    @ParameterizedTest
+    @CsvSource({"abc", "def", "ghi", "jkl", "mno", "pqr", "stu", "vwx", "yz"})
+    void sillyGetterSetterTest(String input) {
         CatFact fact = new CatFact();
-        fact.setFact("Test fact here");
-        fact.setLength("Test fact here".length());
+        fact.setFact(input);
+        fact.setLength(input.length());
 
-        assertEquals("Test fact here", fact.getFact());
-        assertEquals("Test fact here".length(), fact.getLength());
+        assertEquals(input, fact.getFact());
+        assertEquals(input.length(), fact.getLength());
     }
 
 }
