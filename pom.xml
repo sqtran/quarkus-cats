@@ -70,7 +70,13 @@
       <artifactId>pitest-junit5-plugin</artifactId>
       <version>${pitest.junit5.plugin.version}</version>
       <scope>test</scope>
-  </dependency>
+    </dependency>
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <version>1.18.22</version>
+      <scope>provided</scope>
+    </dependency>
   </dependencies>
   <build>
     <plugins>
