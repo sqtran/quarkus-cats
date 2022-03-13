@@ -21,7 +21,7 @@ public class PersonService {
 
         System.out.println("Retrieving random person now");
 
-        String json = RequestUtil.call_service(PERSON_URL);
+        String json = RequestUtil.getResource(PERSON_URL);
 
         return mapJsonToPerson(json);
 

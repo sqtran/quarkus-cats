@@ -12,9 +12,6 @@ public class CatService {
     private static final String CAT_URL = "https://catfact.ninja/fact";
 
     public CatFact retrieveRandomCatFact() {
-
-        CatFact fact = new Gson().fromJson(RequestUtil.call_service(CAT_URL), CatFact.class);
-
-        return fact;
+        return new Gson().fromJson(RequestUtil.getResource(CAT_URL), CatFact.class);
     }
 }
