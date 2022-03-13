@@ -5,19 +5,25 @@ import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpClient.Redirect;
 import java.net.http.HttpRequest;
-import java.net.http.HttpResponse;
 import java.net.http.HttpResponse.BodyHandlers;
 import java.time.Duration;
 
+import javax.enterprise.context.ApplicationScoped;
+
+@ApplicationScoped
 public class RequestUtil {
 
-    private static HttpClient httpClient = HttpClient.newBuilder()
+    private HttpClient httpClient;
+
+    public RequestUtil() {
+        httpClient = HttpClient.newBuilder()
         .version(HttpClient.Version.HTTP_1_1)
         .followRedirects(Redirect.ALWAYS)
         .connectTimeout(Duration.ofSeconds(10))
         .build();
+    }
 
-     public static String getResource(String url)  {
+     public String getResource(String url)  {
 
         try {
             HttpRequest request = HttpRequest.newBuilder()
