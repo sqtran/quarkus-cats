@@ -1,5 +1,7 @@
 package com.steve;
 
+import com.steve.controller.GreetingResourceTest;
+
 import io.quarkus.test.junit.NativeImageTest;
 
 @NativeImageTest

@@ -1,4 +1,4 @@
-package com.steve;
+package com.steve.controller;
 
 import io.quarkus.test.junit.QuarkusTest;
 import org.junit.jupiter.api.Test;

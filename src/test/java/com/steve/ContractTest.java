@@ -3,6 +3,7 @@ package com.steve;
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.when;
 
@@ -55,12 +56,14 @@ public class ContractTest {
         when(mockUtil.getResource(eq(CatService.CAT_URL))).thenReturn(FACT_RESPONSE);
         when(mockUtil.getResource(eq(PersonService.PERSON_URL))).thenReturn(PERSON_RESPONSE);
 
-        given()
+        String response = given()
             .filter(openAPIFilter)
         .when()
             .get("/catfact")
         .then()
-            .assertThat().statusCode(200);
+            .assertThat().statusCode(200).extract().asString();
+
+        assertFalse("".equals(response));
     }
 
     @Test

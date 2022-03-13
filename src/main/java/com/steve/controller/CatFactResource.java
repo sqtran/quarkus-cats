@@ -13,10 +13,13 @@ import com.steve.service.CatService;
 import com.steve.service.Person;
 import com.steve.service.PersonService;
 
+import lombok.extern.java.Log;
+
 
 @Path("/")
 @Produces(MediaType.APPLICATION_JSON)
-public class CatController {
+@Log
+public class CatFactResource {
 
     @Inject
     CatService catSvc;
@@ -29,7 +32,7 @@ public class CatController {
     @Path("/catfact")
     @Produces(value = "text/plain")
     public String getFact() {
-        System.out.println("getting random cat fact quote now");
+        log.info("getting random cat fact quote now");
 
         CatFact fact = catSvc.retrieveRandomCatFact();
         Person p = personSvc.retrieveRandomPerson();
@@ -43,8 +46,7 @@ public class CatController {
     @Produces(value = "text/plain")
     public String getCatFact() throws IOException, InterruptedException {
 
-        System.out.println("getting random cat fact now");
-
+        log.info("getting random cat fact now");
         return catSvc.retrieveRandomCatFact().getFact();
 
     }
@@ -55,7 +57,7 @@ public class CatController {
     @Produces(value = "application/json")
     public Person getPerson() throws IOException, InterruptedException {
 
-        System.out.println("getting random person now");
+        log.info("getting random person now");
 
         return personSvc.retrieveRandomPerson();
 
