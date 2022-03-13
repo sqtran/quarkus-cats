@@ -17,6 +17,7 @@
     <quarkus.platform.group-id>io.quarkus.platform</quarkus.platform.group-id>
     <quarkus.platform.version>2.7.3.Final</quarkus.platform.version>
     <surefire-plugin.version>3.0.0-M5</surefire-plugin.version>
+    <openapi.validator.version>2.15.1</openapi.validator.version>
   </properties>
   <dependencyManagement>
     <dependencies>
@@ -74,6 +75,12 @@
       <groupId>org.pitest</groupId>
       <artifactId>pitest-junit5-plugin</artifactId>
       <version>${pitest.junit5.plugin.version}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.atlassian.oai</groupId>
+      <artifactId>swagger-request-validator-restassured</artifactId>
+      <version>${openapi.validator.version}</version>
       <scope>test</scope>
     </dependency>
     <dependency>

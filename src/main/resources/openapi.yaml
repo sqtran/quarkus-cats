@@ -1,0 +1,86 @@
+openapi: 3.0.1
+info:
+  title: Cat Facts Demo App
+  description: 'This is just a sample OpenAPI contract for the Cat Facts application.'
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  version: 1.0.0
+servers:
+- url: http://localhost:8080
+tags:
+- name: catfact
+  description: A randomly generated cat fact from a madeup person
+- name: fact
+  description: Random cat facts pulled from a free API service
+  externalDocs:
+    description: Find out more
+    url: https://catfact.ninja/fact
+- name: person
+  description: Randomly generated person pulled from a free API service
+  externalDocs:
+    description: Find out more
+    url: https://randomuser.me/api/
+
+paths:
+  /catfact:
+    get:
+      tags:
+      - catfact
+      summary: Gets a random fact
+      responses:
+        200:
+          description: successful operation
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: Just a made up cat quote, from a made up person.
+        400:
+          description: Invalid status value
+          content: {}
+
+  /fact/:
+    get:
+      tags:
+      - fact
+      summary: Returns a random fact about cats
+      description: Returns a random fact in json format
+      responses:
+        200:
+          description: successful operation
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: Just some random string about a cat.
+  /person:
+    get:
+      tags:
+      - person
+      summary: Returns a randomly generated person
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Person'
+
+components:
+  schemas:
+    Person:
+      type: object
+      properties:
+        firstName:
+          type: string
+        lastName:
+          type: string
+        title:
+          type: string
+        city:
+          type: string
+        state:
+          type: string
+        country:
+          type: string
