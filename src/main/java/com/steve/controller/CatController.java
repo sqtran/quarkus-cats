@@ -27,7 +27,9 @@ public class CatController {
 
     @GET
     @Path("/catfact")
+    @Produces(value = "text/plain")
     public String getFact() {
+        System.out.println("getting random cat fact quote now");
 
         CatFact fact = catSvc.retrieveRandomCatFact();
         Person p = personSvc.retrieveRandomPerson();
@@ -38,6 +40,7 @@ public class CatController {
 
     @GET
     @Path("/fact")
+    @Produces(value = "text/plain")
     public String getCatFact() throws IOException, InterruptedException {
 
         System.out.println("getting random cat fact now");
@@ -49,6 +52,7 @@ public class CatController {
 
     @GET
     @Path("/person")
+    @Produces(value = "application/json")
     public Person getPerson() throws IOException, InterruptedException {
 
         System.out.println("getting random person now");
