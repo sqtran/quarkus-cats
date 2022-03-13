@@ -1,10 +1,10 @@
 package com.steve.service;
 
-import java.util.HashMap;
 import java.util.ArrayList;
 import java.util.Map;
 
 import javax.enterprise.context.ApplicationScoped;
+import javax.inject.Inject;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -13,7 +13,10 @@ import com.steve.util.RequestUtil;
 @ApplicationScoped
 public class PersonService {
 
-    private static final String PERSON_URL = "https://randomuser.me/api/";
+    @Inject
+    RequestUtil util;
+
+    public static final String PERSON_URL = "https://randomuser.me/api/";
 
     private final ObjectMapper mapper = new ObjectMapper();
 
@@ -21,7 +24,7 @@ public class PersonService {
 
         System.out.println("Retrieving random person now");
 
-        String json = RequestUtil.getResource(PERSON_URL);
+        String json = util.getResource(PERSON_URL);
 
         return mapJsonToPerson(json);
 
