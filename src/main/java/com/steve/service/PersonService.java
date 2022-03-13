@@ -10,7 +10,10 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.steve.util.RequestUtil;
 
+import lombok.extern.java.Log;
+
 @ApplicationScoped
+@Log
 public class PersonService {
 
     @Inject
@@ -22,7 +25,7 @@ public class PersonService {
 
     public Person retrieveRandomPerson() {
 
-        System.out.println("Retrieving random person now");
+        log.info("Retrieving random person now");
 
         String json = util.getResource(PERSON_URL);
 

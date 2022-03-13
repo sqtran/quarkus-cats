@@ -10,30 +10,40 @@ import java.time.Duration;
 
 import javax.enterprise.context.ApplicationScoped;
 
+import lombok.extern.java.Log;
+
 @ApplicationScoped
+@Log
 public class RequestUtil {
 
     private HttpClient httpClient;
 
-    public RequestUtil() {
-        httpClient = HttpClient.newBuilder()
-        .version(HttpClient.Version.HTTP_1_1)
-        .followRedirects(Redirect.ALWAYS)
-        .connectTimeout(Duration.ofSeconds(10))
-        .build();
+    public RequestUtil(HttpClient client) {
+        httpClient = client;
     }
 
-     public String getResource(String url)  {
+    public RequestUtil() {
+        httpClient = HttpClient.newBuilder()
+                .version(HttpClient.Version.HTTP_1_1)
+                .followRedirects(Redirect.ALWAYS)
+                .connectTimeout(Duration.ofSeconds(10))
+                .build();
+    }
+
+    public String getResource(String url) {
 
         try {
             HttpRequest request = HttpRequest.newBuilder()
-            .GET()
-            .uri(URI.create(url))
-            .build();
+                    .GET()
+                    .uri(URI.create(url))
+                    .build();
+
+            log.info("Calling " + url);
 
             return httpClient.send(request, BodyHandlers.ofString()).body();
 
         } catch (IOException | InterruptedException ie) {
+            log.info(ie.toString());
             return null;
         }
     }
