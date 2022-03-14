@@ -1,4 +1,4 @@
-package com.steve;
+package demo.steve;
 
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.CoreMatchers.is;
@@ -8,13 +8,13 @@ import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.when;
 
 import com.atlassian.oai.validator.restassured.OpenApiValidationFilter;
-import com.steve.service.CatService;
-import com.steve.service.Person;
-import com.steve.service.PersonService;
-import com.steve.util.RequestUtil;
 
 import org.junit.jupiter.api.Test;
 
+import demo.steve.service.CatService;
+import demo.steve.service.Person;
+import demo.steve.service.PersonService;
+import demo.steve.util.RequestUtil;
 import io.quarkus.test.junit.QuarkusTest;
 import io.quarkus.test.junit.mockito.InjectMock;
 

@@ -1,5 +1,8 @@
-package com.steve.service;
+package demo.steve.service;
 
+import io.quarkus.runtime.annotations.RegisterForReflection;
+
+@RegisterForReflection
 public class CatFact {
 
     private String fact;

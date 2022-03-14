@@ -1,4 +1,4 @@
-package com.steve.service;
+package demo.steve.service;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 

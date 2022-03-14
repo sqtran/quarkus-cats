@@ -1,4 +1,4 @@
-package com.steve.util;
+package demo.steve.util;
 
 public class DemoUtil {
 

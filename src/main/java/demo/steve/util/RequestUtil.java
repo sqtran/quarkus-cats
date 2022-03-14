@@ -1,4 +1,4 @@
-package com.steve.util;
+package demo.steve.util;
 
 import java.io.IOException;
 import java.net.URI;

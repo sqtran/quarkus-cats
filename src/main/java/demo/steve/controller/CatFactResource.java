@@ -1,4 +1,4 @@
-package com.steve.controller;
+package demo.steve.controller;
 
 import java.io.IOException;
 
@@ -8,11 +8,10 @@ import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
-import com.steve.service.CatFact;
-import com.steve.service.CatService;
-import com.steve.service.Person;
-import com.steve.service.PersonService;
-
+import demo.steve.service.CatFact;
+import demo.steve.service.CatService;
+import demo.steve.service.Person;
+import demo.steve.service.PersonService;
 import lombok.extern.java.Log;
 
 

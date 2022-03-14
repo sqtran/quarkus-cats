@@ -1,11 +1,11 @@
-package com.steve.service;
+package demo.steve.service;
 
 import com.google.gson.Gson;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 
-import com.steve.util.RequestUtil;
+import demo.steve.util.RequestUtil;
 
 @ApplicationScoped
 public class CatService {
