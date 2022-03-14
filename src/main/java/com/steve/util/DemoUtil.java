@@ -1,6 +1,6 @@
 package com.steve.util;
 
-public class DummyUtil {
+public class DemoUtil {
 
     public int getOne() {
         return 1;
@@ -13,11 +13,13 @@ public class DummyUtil {
     public int getThree() {
         int sum = 0;
 
+        //while (sum < 3) {
         while (sum != 3) {
             sum += getOne();
         }
 
         return sum;
+
     }
 
     public String getFour() {

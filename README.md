@@ -50,7 +50,6 @@ If you want to learn more about building native executables, please consult http
 ## Running Mutation Tests
 
 ```shell script
-mvn test-compile org.pitest:pitest-maven:mutationCoverage
-mvn test-compile org.pitest:pitest-maven:mutationCoverage -DwithHistory
-
+mvn org.pitest:pitest-maven:mutationCoverage
+mvn org.pitest:pitest-maven:mutationCoverage -DwithHistory
 ```

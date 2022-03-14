@@ -40,7 +40,7 @@ paths:
           description: Invalid status value
           content: {}
 
-  /fact/:
+  /fact:
     get:
       tags:
       - fact

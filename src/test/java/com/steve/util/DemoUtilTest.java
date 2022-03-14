@@ -1,12 +1,13 @@
 package com.steve.util;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 import org.junit.jupiter.api.Test;
 
-public class DummyUtilTest {
+public class DemoUtilTest {
 
-    DummyUtil util = new DummyUtil();
+    DemoUtil util = new DemoUtil();
 
 
     @Test
@@ -17,21 +18,28 @@ public class DummyUtilTest {
     @Test
     void testGetFour() {
         assertNotNull(util.getFour());
+        assertEquals("four", util.getFour());
+
     }
 
     @Test
     void testGetThree() {
         assertNotNull(util.getThree());
+        assertEquals(3, util.getThree());
+
     }
 
     @Test
     void testGetTwo() {
         assertNotNull(util.getTwo());
+        assertEquals(2, util.getTwo());
+
 
     }
 
     @Test
     void testGetOne() {
         assertNotNull(util.getOne());
+        assertEquals(1, util.getOne());
     }
 }
