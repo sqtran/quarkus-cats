@@ -54,6 +54,10 @@ mvn org.pitest:pitest-maven:mutationCoverage
 mvn org.pitest:pitest-maven:mutationCoverage -DwithHistory
 ```
 
+## Running Integration Tests
+```shell script
+mvn failsafe:integration-test
+```
 
 ## OpenAPI
 
