@@ -53,3 +53,8 @@ If you want to learn more about building native executables, please consult http
 mvn org.pitest:pitest-maven:mutationCoverage
 mvn org.pitest:pitest-maven:mutationCoverage -DwithHistory
 ```
+
+
+## OpenAPI
+
+Load the openapi.yaml file into https://editor.swagger.io/ to see it presentedly neatly.
