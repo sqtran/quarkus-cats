@@ -84,3 +84,10 @@ components:
           type: string
         country:
           type: string
+    Fact:
+      type: object
+      properties:
+        fact:
+          type: string
+        length:
+          type: integer

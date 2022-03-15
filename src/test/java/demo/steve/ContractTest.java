@@ -30,26 +30,6 @@ public class ContractTest {
     @InjectMock
     RequestUtil mockUtil;
 
-
-    @Test
-    public void testGetFact() {
-
-        when(mockUtil.getResource(eq(CatService.CAT_URL))).thenReturn(FACT_RESPONSE);
-
-        String response = given()
-            .filter(openAPIFilter)
-        .when()
-            .get("/fact")
-        .then()
-            .assertThat()
-                .statusCode(200)
-                .body(is("abc."))
-        .extract().asString();
-
-        assertEquals("abc.", response);
-
-    }
-
     @Test
     public void getGetCatFact() {
 
@@ -88,6 +68,25 @@ public class ContractTest {
         assertEquals("Ilhéus", response.getCity());
         assertEquals("Tocantins", response.getState());
         assertEquals("Brazil", response.getCountry());
+
+    }
+
+    @Test
+    public void testGetFact() {
+
+        when(mockUtil.getResource(eq(CatService.CAT_URL))).thenReturn(FACT_RESPONSE);
+
+        String response = given()
+            .filter(openAPIFilter)
+        .when()
+            .get("/fact")
+        .then()
+            .assertThat()
+                .statusCode(200)
+                .body(is("abc."))
+        .extract().asString();
+
+        assertEquals("abc.", response);
 
     }
 }

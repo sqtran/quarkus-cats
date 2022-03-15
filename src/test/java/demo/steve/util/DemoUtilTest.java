@@ -9,7 +9,6 @@ public class DemoUtilTest {
 
     DemoUtil util = new DemoUtil();
 
-
     @Test
     void testGetNumber() {
         assertNotNull(util.getNumber(5));
@@ -19,22 +18,18 @@ public class DemoUtilTest {
     void testGetFour() {
         assertNotNull(util.getFour());
         assertEquals("four", util.getFour());
-
     }
 
     @Test
     void testGetThree() {
         assertNotNull(util.getThree());
         assertEquals(3, util.getThree());
-
     }
 
     @Test
     void testGetTwo() {
         assertNotNull(util.getTwo());
         assertEquals(2, util.getTwo());
-
-
     }
 
     @Test

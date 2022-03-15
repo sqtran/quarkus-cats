@@ -13,19 +13,16 @@ public class DemoUtil {
     public int getThree() {
         int sum = 0;
 
-        //while (sum < 3) {
         while (sum != 3) {
             sum += getOne();
         }
 
         return sum;
-
     }
 
     public String getFour() {
         return "four";
     }
-
 
     public String getNumber(int num) {
         if (num == 1) {
@@ -42,5 +39,4 @@ public class DemoUtil {
             return getFour();
         }
     }
-
 }
