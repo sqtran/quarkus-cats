@@ -12,6 +12,8 @@ public class DemoUtilTest {
     @Test
     void testGetNumber() {
         assertNotNull(util.getNumber(5));
+        assertEquals("1", util.getNumber(1));
+        assertEquals("3", util.getNumber(3));
     }
 
     @Test

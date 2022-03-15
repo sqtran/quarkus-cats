@@ -25,15 +25,18 @@ public class DemoUtil {
     }
 
     public String getNumber(int num) {
+
         if (num == 1) {
             return "" + getOne();
         }
-
         else if (num == 2) {
             return "" + getTwo();
         }
         else if (num == 3) {
             return "" + getThree();
+        }
+        else if (Integer.valueOf(num) == null) {
+            return "null";
         }
         else {
             return getFour();
