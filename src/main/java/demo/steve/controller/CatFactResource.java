@@ -56,6 +56,7 @@ public class CatFactResource {
         return catSvc.retrieveRandomCatFact().getFact();
     }
 
+
     // @GET
     // @Path("/fact")
     // @Produces(value = "application/json")

@@ -4,6 +4,7 @@ import static io.restassured.RestAssured.given;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.when;
 
@@ -83,10 +84,9 @@ public class ContractTest {
         .then()
             .assertThat()
                 .statusCode(200)
-                .body(is("abc."))
-        .extract().asString();
+         .extract().asString();
 
-        assertEquals("abc.", response);
+        assertTrue(response.contains("abc."));
 
     }
 }
